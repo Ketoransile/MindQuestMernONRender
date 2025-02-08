@@ -13,15 +13,17 @@ import { Button } from "./ui/button";
 
 const Hero = () => {
   return (
-    <div className="grid grid-cols-2 justify-center gap-12 ">
-      <div className="text-white flex flex-col gap-4  ">
-        <h1 className="text-6xl">Unleash Your Inner Wizard of Wisdom</h1>
-        <p className="text-lg mb-6 mt-3 text-white ">
+    <div className="grid grid-cols-2 justify-center gap-12 max-lg:flex max-lg:flex-col ">
+      <div className="text-white flex flex-col gap-4 max-lg:gap-8 ">
+        <h1 className="text-6xl max-lg:text-5xl ">
+          Unleash Your Inner Wizard of Wisdom
+        </h1>
+        <p className="text-lg mb-6 mt-3 text-white max-lg:text-gray-200 max-lg:text-xl">
           Challenge yourself with fun quizzes on various topics. Test your
           knowledge, compete with others, and discover your strengths!
         </p>
-        <Button className="rounded-xl p-4  bg-blue-600 inline-flex self-start">
-          <Link to="/login" className="  ">
+        <Button className="rounded-xl p-4  bg-blue-600 inline-flex self-start max-lg:hidden">
+          <Link to="/login" className="">
             Start Now
           </Link>
         </Button>
@@ -42,6 +44,11 @@ const Hero = () => {
           <InterestCard subjectName="Weather" subjectIcon={FaCloudSun} />
         </div>
       </div>
+      <Button className="rounded-xl p-4  bg-blue-600 inline-flex self-start lg:hidden">
+        <Link to="/login" className="">
+          Start Now
+        </Link>
+      </Button>
     </div>
   );
 };

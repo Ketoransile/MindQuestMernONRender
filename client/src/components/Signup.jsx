@@ -73,16 +73,16 @@ const Signup = () => {
   };
 
   return (
-    <div className="bg-white border border-slate-400 rounded-2xl flex flex-col gap-2 items-center justify-center px-20 pt-6  mx-auto pb-4">
+    <div className="bg-white border border-slate-400 rounded-2xl flex flex-col gap-2 items-center  max-lg:px-8 px-20 pt-6 pb-4 shadow-xl">
       <h1 className="text-4xl text-slate-600 font-semibold mb-10">Sign Up</h1>
-      <Link
+      {/* <Link
         // to="/auth/google"
         className="flex items-center gap-4 border border-slate-200 px-6 py-3 rounded-md w-full justify-center text-sm text-slate-700 hover:bg-slate-100 transition"
       >
         <FcGoogle className="text-2xl" />
         Continue with Google
-      </Link>
-      <p className="text-slate-400">OR</p>
+      </Link> */}
+      {/* <p className="text-slate-400">OR</p> */}
       <Form onSubmit={handleSubmit} method="post">
         <FormRow
           type="text"

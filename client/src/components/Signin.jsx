@@ -69,50 +69,53 @@ const Signin = () => {
   };
 
   return (
-    <div className="bg-white border border-slate-400 rounded-2xl flex flex-col gap-6 items-center justify-center px-20 pt-6 mw-2/3 mx-auto pb-4">
-      <h1 className="text-4xl font-semibold text-slate-600">Welcome Back</h1>
+    // <div className="bg-white border border-slate-400 rounded-2xl flex flex-col gap-2 items-center  max-lg:px-8 px-20 pt-6 pb-4">
+    <div className="bg-white border border-slate-400 rounded-2xl flex flex-col gap-8  items-center   px-20  pt-6 pb-4 shadow-xl">
+      <h1 className="text-2xl text-slate-600 font-semibold mb-10">
+        Welcome Back
+      </h1>
       <div className="flex flex-col justify-center items-center text-slate-500 mb-4">
-        <h2 className="text-xl">Glad to see you again!</h2>
-        <p>Log into your account below</p>
+        <h2 className="text-xl max-lg:text-xs">Glad to see you again!</h2>
+        <p className="max-lg:text-xs">Log into your account below</p>
       </div>
 
       {/* Google Login Button */}
-      <div className="flex flex-col gap-4 w-full">
-        <Link
+
+      {/* <Link
           to="/auth/google"
           className="flex items-center gap-4 border border-slate-200 px-6 py-3 rounded-md w-full justify-center text-sm text-slate-700 hover:bg-slate-100 transition"
         >
           <FcGoogle className="text-2xl" />
           Continue with Google
-        </Link>
+        </Link> */}
 
-        {/* Email Form Row */}
-        <Form method="post" onSubmit={handleSubmit}>
-          <FormRow
-            type="email"
-            name="email"
-            value={formData.email}
-            labelText="Email"
-            onChange={handleInputChange}
-          />
+      {/* Email Form Row */}
+      <Form method="post" onSubmit={handleSubmit}>
+        <FormRow
+          type="email"
+          name="email"
+          value={formData.email}
+          labelText="Email"
+          onChange={handleInputChange}
+        />
 
-          <FormRow
-            type="password"
-            name="password"
-            value={formData.password}
-            labelText="Password"
-            onChange={handleInputChange}
-          />
+        <FormRow
+          type="password"
+          name="password"
+          value={formData.password}
+          labelText="Password"
+          onChange={handleInputChange}
+        />
 
-          <button
-            disabled={loading}
-            type="submit"
-            className="w-full mt-4 bg-blue-500 disabled:bg-blue-300 text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition"
-          >
-            {loading ? "Signing you in ..." : "Sign in"}
-          </button>
-        </Form>
-      </div>
+        <button
+          disabled={loading}
+          type="submit"
+          className="w-full mt-4 bg-blue-500 disabled:bg-blue-300 text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition"
+        >
+          {loading ? "Signing you in ..." : "Sign in"}
+        </button>
+      </Form>
+
       <p className="text-sm text-slate-500 mt-4">
         Do not have an account?{" "}
         <Link to="/signup" className="text-blue-500 hover:underline">
