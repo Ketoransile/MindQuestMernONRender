@@ -68,10 +68,9 @@ export function UsersTable({ users, removeUser }) {
     }
 
     try {
-      const response = await axios.delete(
-        `${import.meta.env.VITE_API_BASE_URL}/api/v1/users/${userId}`,
-        { withCredentials: true }
-      );
+      const response = await axios.delete(`/api/v1/users/${userId}`, {
+        withCredentials: true,
+      });
       // console.log("Delete User Response:", response);
 
       if (response.data.statusCode === 200) {

@@ -64,7 +64,7 @@ const QuizStart = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}/api/v1/results/submit-quiz`,
+        `/api/v1/results/submit-quiz`,
         payload,
         { withCredentials: true }
       );

@@ -3,10 +3,9 @@ import { toast } from "react-toastify";
 
 export const adminCategoriesPageLoader = async () => {
   try {
-    const response = await axios.get(
-      `${import.meta.env.VITE_API_BASE_URL}/api/v1/categories`,
-      { withCredentials: true }
-    );
+    const response = await axios.get(`/api/v1/categories`, {
+      withCredentials: true,
+    });
 
     if (!response) {
       return toast.error("Failed to fetch categories data");

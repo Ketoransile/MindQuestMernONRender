@@ -29,9 +29,7 @@ const QuizCards = ({ quiz }) => {
   const handleDelete = async () => {
     try {
       const response = await axios.delete(
-        `${import.meta.env.VITE_API_BASE_URL}/api/v1/quizzes/delete-quiz/${
-          quiz._id
-        }`,
+        `/api/v1/quizzes/delete-quiz/${quiz._id}`,
         { withCredentials: true }
       );
       // console.log("Response of delete quiz", response);

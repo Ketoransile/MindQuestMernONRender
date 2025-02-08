@@ -83,7 +83,7 @@ const Newquiz = () => {
       //   quizData
       // );
       const response = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}/api/v1/quizzes/create-quiz`,
+        `/api/v1/quizzes/create-quiz`,
         quizData,
         {
           headers: {

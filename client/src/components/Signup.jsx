@@ -38,7 +38,7 @@ const Signup = () => {
     // console.log("data to be submitted is:", formData);
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}/api/v1/auth/register`,
+        `/api/v1/auth/register`,
         formSubmissionData,
         {
           headers: {

@@ -5,10 +5,9 @@ import { toast } from "react-toastify";
 const adminPageLoader = async () => {
   try {
     // Fetch current user
-    const userResponse = await axios.get(
-      `${import.meta.env.VITE_API_BASE_URL}/api/v1/users/me`,
-      { withCredentials: true }
-    );
+    const userResponse = await axios.get(`/api/v1/users/me`, {
+      withCredentials: true,
+    });
 
     // console.log("Uer Response:", userResponse); // Debugging
 
@@ -30,13 +29,13 @@ const adminPageLoader = async () => {
 
     // Fetch admin-related data
     const [quizzes, categories, users] = await Promise.all([
-      axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/quizzes/`, {
+      axios.get(`/api/v1/quizzes/`, {
         withCredentials: true,
       }),
-      axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/categories/`, {
+      axios.get(`/api/v1/categories/`, {
         withCredentials: true,
       }),
-      axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/users/`, {
+      axios.get(`/api/v1/users/`, {
         withCredentials: true,
       }),
     ]);

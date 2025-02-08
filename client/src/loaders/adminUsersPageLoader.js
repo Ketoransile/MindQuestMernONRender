@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const adminPageUsersSectionLoader = async (req, res, next) => {
   // try {
-  //   const response = await axios.get("${import.meta.env.VITE_API_BASE_URL}/api/v1/users/", {
+  //   const response = await axios.get("/api/v1/users/", {
   //     withCredentials: true,
   //   });
 
@@ -18,12 +18,9 @@ export const adminPageUsersSectionLoader = async (req, res, next) => {
   //   next(error);
   // }
   try {
-    const response = await axios.get(
-      `${import.meta.env.VITE_API_BASE_URL}/api/v1/users/`,
-      {
-        withCredentials: true,
-      }
-    );
+    const response = await axios.get(`/api/v1/users/`, {
+      withCredentials: true,
+    });
 
     // console.log("Response from admin page users section loader:", response);
 

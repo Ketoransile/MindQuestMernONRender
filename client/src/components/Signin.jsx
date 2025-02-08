@@ -31,7 +31,7 @@ const Signin = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}/api/v1/auth/login`,
+        `/api/v1/auth/login`,
         formSubmissionData,
         {
           withCredentials: true, // Include credentials

@@ -3,12 +3,9 @@ import { toast } from "react-toastify";
 
 export const adminquizPageLoader = async () => {
   try {
-    const response = await axios.get(
-      `${import.meta.env.VITE_API_BASE_URL}/api/v1/quizes`,
-      {
-        withCredentials: true,
-      }
-    );
+    const response = await axios.get(`/api/v1/quizes`, {
+      withCredentials: true,
+    });
     if (!response) {
       toast.error("Failed to fetch available Quizes");
       return;
