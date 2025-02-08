@@ -22,8 +22,8 @@ import { toast } from "react-toastify";
 import { Form, useLoaderData, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import QuizContext from "../context/QuizContext.js";
-import { AdminContext } from "@/context/AdminPageContext";
-import useAdminStore from "@/store/useAdminStore";
+import { AdminContext } from "../context/AdminPageContext";
+import useAdminStore from "../store/useAdminStore";
 
 const Newquiz = () => {
   const navigate = useNavigate();

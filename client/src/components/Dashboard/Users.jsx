@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import UsersTable from "./DashboardComponents/UsersTable";
 import { useLoaderData } from "react-router-dom";
-import { AdminContext } from "@/context/AdminPageContext";
+import { AdminContext } from "../../context/AdminPageContext";
 import useAdminStore from "../../store/useAdminStore";
 
 const Users = () => {

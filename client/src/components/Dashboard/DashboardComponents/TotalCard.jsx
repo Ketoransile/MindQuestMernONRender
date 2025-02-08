@@ -1,4 +1,4 @@
-import { AdminContext } from "@/context/AdminPageContext";
+import { AdminContext } from "../../../context/AdminPageContext";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import {

@@ -1,6 +1,6 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 import AdminSidebar from "../components/Sidebar/AdminSidebar";
-import useAdminStore from "@/store/useAdminStore";
+import useAdminStore from "../store/useAdminStore";
 import { useEffect } from "react";
 
 const AdminPage = () => {

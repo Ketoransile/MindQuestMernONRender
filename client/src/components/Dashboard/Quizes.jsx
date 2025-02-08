@@ -1,7 +1,7 @@
 import { Button } from "../ui/button";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import QuizCards from "../QuizCards";
-import useAdminStore from "@/store/useAdminStore";
+import useAdminStore from "../../store/useAdminStore";
 
 const Quizzes = () => {
   const navigate = useNavigate();

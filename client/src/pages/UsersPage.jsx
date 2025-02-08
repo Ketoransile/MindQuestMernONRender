@@ -1,4 +1,4 @@
-import UsersPageHeader from "@/components/UsersPageHeader";
+import UsersPageHeader from "../components/UsersPageHeader";
 import { Button } from "../components/ui/button";
 import { UsersQuizCard } from "../components/Userspage/UsersQuizCard";
 import useUsersStore from "../store/useUsersStore";
