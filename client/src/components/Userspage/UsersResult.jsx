@@ -20,11 +20,11 @@ const UsersResult = () => {
 
   return (
     <div className="p-10 min-h-screen bg-front">
-      <div className="flex flex-col gap-10">
-        <h1 className="text-2xl font-bold text-white">
+      <div className="flex flex-col gap-10 max-lg:items-center">
+        <h1 className="text-2xl font-bold text-white max-lg:text-center">
           See Your Results Below
         </h1>
-        <div className="grid grid-cols-5 gap-6">
+        <div className="grid grid-cols-3 gap-6 max-md:grid-cols-1 max-lg:grid-cols-2 max-lg:gap-2">
           {userResults.length > 0 ? (
             userResults.map((result) => (
               <UsersResultCard key={result._id} result={result} />

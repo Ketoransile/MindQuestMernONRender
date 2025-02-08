@@ -4,14 +4,18 @@ const useUsersStore = create((set) => ({
   quizzes: [],
   results: [], // Store user results
   selectedQuiz: null,
+  userImage: null,
+  username: null,
 
   // Initialize state from loader
-  initializeUsersData: ({ quizzes, results }) => {
+  initializeUsersData: ({ quizzes, results, userImage, username }) => {
     set({
       // quizzes: Array.isArray(quizzes) ? quizzes : [],
       // results: Array.isArray(results) ? results : [], // Ensure results is an array
       quizzes,
       results,
+      userImage: userImage || null,
+      username: username || null,
     });
   },
 
@@ -34,6 +38,7 @@ const useUsersStore = create((set) => ({
     set((state) => ({
       results: state.results.filter((result) => result._id !== resultId),
     })),
+  setUserImage: (imageUrl) => set({ userImage: imageUrl }),
 }));
 
 export default useUsersStore;

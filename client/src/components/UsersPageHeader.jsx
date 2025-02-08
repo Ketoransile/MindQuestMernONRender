@@ -14,7 +14,8 @@ import {
 } from "./ui/alert-dialog";
 import { AlertDialogFooter, AlertDialogHeader } from "./ui/alert-dialog";
 
-const UsersPageHeader = () => {
+const UsersPageHeader = ({ userImage }) => {
+  console.log("USr image is ", userImage);
   const navigate = useNavigate();
   const handleLogoutClick = async () => {
     try {
@@ -39,9 +40,9 @@ const UsersPageHeader = () => {
     <div className="flex justify-between items-center text-white  ">
       <NavLink className="text-2xl text-white ">MindQuest</NavLink>
       <div className="flex gap-4 ">
-        <NavLink className="">Home</NavLink>
+        {/* <NavLink className="">Home</NavLink>
         <NavLink></NavLink>
-        <NavLink>About</NavLink>
+        <NavLink>About</NavLink> */}
       </div>
       <div className="flex gap-4">
         <AlertDialog>
@@ -66,7 +67,7 @@ const UsersPageHeader = () => {
           </AlertDialogContent>
         </AlertDialog>
 
-        <img src="/admin.jpg" alt="user-img" className="size-12 rounded-full" />
+        <img src={userImage} alt="user-img" className="size-12 rounded-full" />
       </div>
     </div>
   );

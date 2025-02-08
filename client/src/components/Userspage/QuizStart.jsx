@@ -111,9 +111,9 @@ const QuizStart = () => {
   const question = selectedQuiz.questions[currentQuestionIndex];
 
   return (
-    <div className="bg-front p-10 min-h-screen">
-      <div className="flex flex-col items-center bg-gray-100 p-6">
-        <header className="w-full bg-white p-4 flex justify-between items-center mb-6">
+    <div className="bg-front p-10 min-h-screen max-md:p-4 ">
+      <div className="flex flex-col items-center bg-gray-100 p-6 rounded-xl shadow-lg">
+        <header className="w-full bg-white p-4 flex max-sm:flex-col max-sm:gap-4 justify-between items-center mb-6 ">
           <h1 className="text-xl font-bold">{selectedQuiz.title}</h1>
           <div className="text-sm bg-gray-200 rounded-full px-4 py-1">
             Question {currentQuestionIndex + 1} of{" "}

@@ -51,13 +51,14 @@ const router = createBrowserRouter([
         element: <QuizStart />,
         errorElement: <Error />,
       },
+      {
+        path: "my-result",
+        element: <UsersResult />,
+        errorElement: <Error />,
+      },
     ],
   },
-  {
-    path: "/users/my-result",
-    element: <UsersResult />,
-    errorElement: <Error />,
-  },
+
   {
     path: "unauthorized",
     element: <Unauthorized />,

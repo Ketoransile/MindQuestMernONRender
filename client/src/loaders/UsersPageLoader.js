@@ -7,7 +7,7 @@ const usersPageLoader = async () => {
     const userResponse = await axios.get(`/api/v1/users/me`, {
       withCredentials: true,
     });
-    // console.log("User Response:", userResponse); // Debuggin
+    console.log("User Response:", userResponse); // Debuggin
 
     if (userResponse.data.statusCode !== 200) {
       toast.error("Login failed");
@@ -35,6 +35,8 @@ const usersPageLoader = async () => {
     return {
       quizzes: usersQuizzes?.data?.data?.quizzes || [],
       results: userResults?.data?.data || [],
+      userImage: userResponse?.data?.data?.user?.avatar || "",
+      username: userResponse?.data?.data?.user?.username || "",
     };
   } catch (error) {
     // console.error("Error while fetching users page data", error);
