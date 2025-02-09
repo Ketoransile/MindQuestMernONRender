@@ -6,7 +6,6 @@ dist/
 build/
 
 # Environment variables
-.env
 
 # Logs
 *.log
@@ -14,3 +13,8 @@ build/
 # System files
 .DS_Store
 Thumbs.db
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
+config.bat
