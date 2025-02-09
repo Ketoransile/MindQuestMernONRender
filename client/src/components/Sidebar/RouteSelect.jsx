@@ -48,51 +48,51 @@ const RouteSelect = ({ onItemClick }) => {
   );
 };
 
-// const Routes = ({ iconName: Icon, title, to, selected, onClick }) => {
-//   return (
-//     <Link
-//       to={to}
-//       className={` p-2 rounded-lg ${
-//         selected ? "bg-blue-800" : "bg-transparent"
-//       }`}
-//       onClick={onClick}
-//     >
-//       <div className="flex gap-4 items-center">
-//         <Icon className={` ${selected ? "text-black" : "text-white"} `} />
-//         <span
-//           className={` "text-sm text-slate-200 ${
-//             selected ? "text-white" : "text-slate-400"
-//           }`}
-//         >
-//           {title}
-//         </span>
-//       </div>
-//     </Link>
-//   );
-// };
-// export default RouteSelect;
 const Routes = ({ iconName: Icon, title, to, selected, onClick }) => {
-  const navigate = useNavigate();
-
   return (
-    <button
-      className={`p-2 rounded-lg ${selected ? "bg-blue-800" : "bg-transparent"}`}
-      onClick={(e) => {
-        e.preventDefault();
-        onClick();
-        navigate(to);
-      }}
+    <NavLink
+      to={to}
+      className={` p-2 rounded-lg ${
+        selected ? "bg-blue-800" : "bg-transparent"
+      }`}
+      onClick={onClick}
     >
       <div className="flex gap-4 items-center">
-        <Icon className={`${selected ? "text-black" : "text-white"}`} />
+        <Icon className={` ${selected ? "text-black" : "text-white"} `} />
         <span
-          className={`text-sm ${selected ? "text-white" : "text-slate-400"}`}
+          className={` "text-sm text-slate-200 ${
+            selected ? "text-white" : "text-slate-400"
+          }`}
         >
           {title}
         </span>
       </div>
-    </button>
+    </NavLink>
   );
 };
-
 export default RouteSelect;
+// const Routes = ({ iconName: Icon, title, to, selected, onClick }) => {
+//   const navigate = useNavigate();
+
+//   return (
+//     <NavLink
+//       className={`p-2 rounded-lg ${selected ? "bg-blue-800" : "bg-transparent"}`}
+//       onClick={(e) => {
+//         e.preventDefault();
+//         onClick();
+//       }}
+//       to={to}
+//     >
+//       <div className="flex gap-4 items-center">
+//         <Icon className={`${selected ? "text-black" : "text-white"}`} />
+//         <span
+//           className={`text-sm ${selected ? "text-white" : "text-slate-400"}`}
+//         >
+//           {title}
+//         </span>
+//       </div>
+//     </NavLink>
+//   );
+// };
+
+// export default RouteSelect;

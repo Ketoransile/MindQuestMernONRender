@@ -280,7 +280,7 @@ const AdminPage = () => {
       </AnimatePresence>
 
       {/* Default Sidebar (for lg and above) */}
-      <div className="max-lg:hidden">
+      <div className="hidden lg:block">
         <AdminSidebar />
       </div>
 
