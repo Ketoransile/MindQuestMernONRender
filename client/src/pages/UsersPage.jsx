@@ -70,11 +70,6 @@ const UsersPage = () => {
                 )}
               </div>
             </div>
-            <div className="">
-              <p className="text-white text-lg font-bold mt-10 max-lg:text-center">
-                Quizzes Taken
-              </p>
-            </div>
           </>
         )}
     </div>
