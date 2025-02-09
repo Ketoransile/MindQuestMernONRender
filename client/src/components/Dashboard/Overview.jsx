@@ -17,7 +17,7 @@ const Overview = () => {
   const totalUsers = users?.length || 0;
 
   return (
-    <div className="text-white grid grid-cols-3 gap-10 auto-rows-[180px] p-4">
+    <div className="text-white grid grid-cols-3 max-lg:w-full max-lg:flex max-lg:flex-col  gap-10 auto-rows-[180px] p-4">
       <div className="p-2 rounded-xl border border-slate-700">
         <TotalCard
           {...chartBoxUsers}
@@ -25,7 +25,7 @@ const Overview = () => {
           isUsersCard={true}
         />
       </div>
-      <div className="rounded-xl border border-slate-800 row-span-2 col-span-2">
+      <div className="rounded-xl border border-slate-800 row-span-2 col-span-2 max-lg:min-h-48">
         <PassFailCard {...barChartCategoryPassFail} />
       </div>
       <div className="p-2 rounded-xl border border-slate-800">
@@ -35,7 +35,7 @@ const Overview = () => {
           isQuizesCard
         />
       </div>
-      <div className="p-2 rounded-xl border border-slate-800 row-span-1 col-span-3">
+      <div className="p-2 rounded-xl border border-slate-800 row-span-1 col-span-3 max-lg:min-h-48">
         <PieChartCategory {...categoryPiChart} />
       </div>
     </div>

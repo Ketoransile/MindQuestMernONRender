@@ -8,11 +8,15 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card.jsx";
+import { IoBackspaceOutline } from "react-icons/io5";
+import { IoMdArrowRoundBack } from "react-icons/io";
+import { MdOutlineArrowBackIos } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const UsersResult = () => {
   const { results } = useUsersStore();
   const [userResults, setUserResults] = useState(results); // Initialize with Zustand results
-
+  const navigate = useNavigate();
   // Update results when new ones are added
   useEffect(() => {
     setUserResults(results);
@@ -21,9 +25,16 @@ const UsersResult = () => {
   return (
     <div className="p-10 min-h-screen bg-front">
       <div className="flex flex-col gap-10 max-lg:items-center">
-        <h1 className="text-2xl font-bold text-white max-lg:text-center">
-          See Your Results Below
-        </h1>
+        <div className="flex flex-col gap-6 ">
+          <IoMdArrowRoundBack
+            onClick={() => navigate("/users")}
+            className="text-white"
+            size={24}
+          />
+          <h1 className="text-2xl font-bold text-white max-lg:text-center">
+            See Your Results Below
+          </h1>
+        </div>
         <div className="grid grid-cols-3 gap-6 max-md:grid-cols-1 max-lg:grid-cols-2 max-lg:gap-2">
           {userResults.length > 0 ? (
             userResults.map((result) => (

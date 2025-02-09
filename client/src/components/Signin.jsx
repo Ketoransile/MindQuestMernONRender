@@ -75,8 +75,8 @@ const Signin = () => {
         Welcome Back
       </h1>
       <div className="flex flex-col justify-center items-center text-slate-500 mb-4">
-        <h2 className="text-xl max-lg:text-xs">Glad to see you again!</h2>
-        <p className="max-lg:text-xs">Log into your account below</p>
+        <h2 className="text-xl max-lg:text-lg">Glad to see you again!</h2>
+        <p className="max-lg:text-lg">Log into your account below</p>
       </div>
 
       {/* Google Login Button */}

@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { IoHome } from "react-icons/io5";
 import { MdQuiz } from "react-icons/md";
 import { CiCircleQuestion } from "react-icons/ci";
 import { BiCategory } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";
 
-const RouteSelect = () => {
+const RouteSelect = ({ onItemClick }) => {
   const location = useLocation();
   const [selected, setSelected] = useState("");
   const handleSelected = (title) => {
     setSelected(title);
+    onItemClick();
   };
   return (
     <div className="flex flex-col gap-4 mt-10">
@@ -47,26 +48,51 @@ const RouteSelect = () => {
   );
 };
 
+// const Routes = ({ iconName: Icon, title, to, selected, onClick }) => {
+//   return (
+//     <Link
+//       to={to}
+//       className={` p-2 rounded-lg ${
+//         selected ? "bg-blue-800" : "bg-transparent"
+//       }`}
+//       onClick={onClick}
+//     >
+//       <div className="flex gap-4 items-center">
+//         <Icon className={` ${selected ? "text-black" : "text-white"} `} />
+//         <span
+//           className={` "text-sm text-slate-200 ${
+//             selected ? "text-white" : "text-slate-400"
+//           }`}
+//         >
+//           {title}
+//         </span>
+//       </div>
+//     </Link>
+//   );
+// };
+// export default RouteSelect;
 const Routes = ({ iconName: Icon, title, to, selected, onClick }) => {
+  const navigate = useNavigate();
+
   return (
-    <Link
-      to={to}
-      className={` p-2 rounded-lg ${
-        selected ? "bg-blue-800" : "bg-transparent"
-      }`}
-      onClick={onClick}
+    <button
+      className={`p-2 rounded-lg ${selected ? "bg-blue-800" : "bg-transparent"}`}
+      onClick={(e) => {
+        e.preventDefault();
+        onClick();
+        navigate(to);
+      }}
     >
       <div className="flex gap-4 items-center">
-        <Icon className={` ${selected ? "text-black" : "text-white"} `} />
+        <Icon className={`${selected ? "text-black" : "text-white"}`} />
         <span
-          className={` "text-sm text-slate-200 ${
-            selected ? "text-white" : "text-slate-400"
-          }`}
+          className={`text-sm ${selected ? "text-white" : "text-slate-400"}`}
         >
           {title}
         </span>
       </div>
-    </Link>
+    </button>
   );
 };
+
 export default RouteSelect;

@@ -5,7 +5,9 @@ import { Button } from "./ui/button";
 const Header = () => {
   return (
     <div className="flex justify-between items-center text-white  ">
-      <NavLink className="text-2xl text-white ">MindQuest</NavLink>
+      <NavLink className="text-2xl text-white " to="/">
+        MindQuest
+      </NavLink>
       <div className="flex gap-4 ">
         {/* <NavLink className="">Home</NavLink>
         <NavLink></NavLink>

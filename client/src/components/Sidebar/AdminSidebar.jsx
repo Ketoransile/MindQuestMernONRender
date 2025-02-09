@@ -18,7 +18,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-const AdminSidebar = () => {
+const AdminSidebar = ({ onItemClick }) => {
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
@@ -47,7 +47,7 @@ const AdminSidebar = () => {
       <div className="flex flex-col">
         <AdminAccount />
         {/* <Search /> */}
-        <RouteSelect />
+        <RouteSelect onItemClick={onItemClick} />
 
         <div className="mt-10 p-2 ">
           <AlertDialog>

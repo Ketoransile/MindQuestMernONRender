@@ -13,7 +13,7 @@ const PieChartCategory = (props) => {
   return (
     <div className="flex flex-col  w-full h-full justify-between items-center">
       <h1 className="text-xl font-bold text-center">Category Popularity</h1>
-      <div className="w-full h-full">
+      <div className="w-full h-[400px] max-lg:h-[300px]">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             width={500}

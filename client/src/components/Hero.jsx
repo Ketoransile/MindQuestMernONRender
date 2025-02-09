@@ -13,8 +13,8 @@ import { Button } from "./ui/button";
 
 const Hero = () => {
   return (
-    <div className="grid grid-cols-2 justify-center gap-12 max-lg:flex max-lg:flex-col ">
-      <div className="text-white flex flex-col gap-4 max-lg:gap-8 ">
+    <div className="grid grid-cols-2 justify-center gap-12  max-lg:flex max-lg:flex-col max-lg:gap-4">
+      <div className="text-white flex flex-col gap-4 max-lg:gap-2 ">
         <h1 className="text-6xl max-lg:text-5xl ">
           Unleash Your Inner Wizard of Wisdom
         </h1>
