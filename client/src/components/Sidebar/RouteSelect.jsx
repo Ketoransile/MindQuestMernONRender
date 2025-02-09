@@ -11,7 +11,9 @@ const RouteSelect = ({ onItemClick }) => {
   const [selected, setSelected] = useState("");
   const handleSelected = (title) => {
     setSelected(title);
-    onItemClick();
+    if (onItemClick) {
+      onItemClick(); // Only call this if it's defined (for small screens)
+    }
   };
   return (
     <div className="flex flex-col gap-4 mt-10">
@@ -50,7 +52,7 @@ const RouteSelect = ({ onItemClick }) => {
 
 const Routes = ({ iconName: Icon, title, to, selected, onClick }) => {
   return (
-    <NavLink
+    <Link
       to={to}
       className={` p-2 rounded-lg ${
         selected ? "bg-blue-800" : "bg-transparent"
@@ -67,21 +69,21 @@ const Routes = ({ iconName: Icon, title, to, selected, onClick }) => {
           {title}
         </span>
       </div>
-    </NavLink>
+    </Link>
   );
 };
-export default RouteSelect;
+// export default RouteSelect;
 // const Routes = ({ iconName: Icon, title, to, selected, onClick }) => {
 //   const navigate = useNavigate();
 
 //   return (
-//     <NavLink
+//     <button
 //       className={`p-2 rounded-lg ${selected ? "bg-blue-800" : "bg-transparent"}`}
 //       onClick={(e) => {
 //         e.preventDefault();
 //         onClick();
+//         navigate(to);
 //       }}
-//       to={to}
 //     >
 //       <div className="flex gap-4 items-center">
 //         <Icon className={`${selected ? "text-black" : "text-white"}`} />
@@ -91,8 +93,8 @@ export default RouteSelect;
 //           {title}
 //         </span>
 //       </div>
-//     </NavLink>
+//     </button>
 //   );
 // };
 
-// export default RouteSelect;
+export default RouteSelect;
