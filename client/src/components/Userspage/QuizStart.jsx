@@ -14,6 +14,7 @@ const QuizStart = () => {
   const [showResults, setShowResults] = React.useState(false);
   const [score, setScore] = React.useState(0);
   const [startTime] = React.useState(Date.now());
+  const [loading, setLoading] = React.useState(false);
 
   if (!selectedQuiz) {
     return (
@@ -63,6 +64,7 @@ const QuizStart = () => {
     };
 
     try {
+      setLoading(true);
       const response = await axios.post(
         `/api/v1/results/submit-quiz`,
         payload,
@@ -70,6 +72,7 @@ const QuizStart = () => {
       );
 
       if (response.data.data) {
+        setLoading(false);
         const resultData = response.data.data;
         addResult(resultData); // Update Zustand store
         setScore(resultData.score);
@@ -79,6 +82,8 @@ const QuizStart = () => {
     } catch (error) {
       // console.error("Error submitting quiz:", error);
       toast.error("Failed to submit quiz. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -142,7 +147,11 @@ const QuizStart = () => {
             <Button variant="outline" onClick={() => navigate("/users")}>
               Quit Quiz
             </Button>
-            <Button onClick={nextQuestion}>
+            <Button
+              onClick={nextQuestion}
+              disabled={loading}
+              className={`${loading && "text-slate-400"}`}
+            >
               {currentQuestionIndex < selectedQuiz.questions.length - 1
                 ? "Next"
                 : "Submit"}
